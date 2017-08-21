@@ -304,7 +304,7 @@ Puppet::Type.newtype(:vcsrepo) do
 
   newparam :timeout, :required_features => [:timeout] do
     desc "Timeout. 0 means no timeout"
-    defaultto '300'
+    defaultto '1'
     validate do |value|
       unless Integer(value) >= 0
         raise ArgumentError, "Timeout must be >= 0, given #{value}"
